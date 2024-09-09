@@ -1,9 +1,9 @@
-# AMS-Attendance_Management_System
+
+# Face based attendance system using python and openCV
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)                 
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-360/) 
 
-Project based on Attendance Management System using face recognition
 
 ### What steps you have to follow??
 - Download or clone my Repository to your device
@@ -21,5 +21,4 @@ Project based on Attendance Management System using face recognition
 - After training model click on `Automatic Attendance` ,you have to enter the subject name and then it can fill attendace by your face using our trained model.
 - it will create `.csv` file for every subject you enter and seperate every `.csv` file accoriding the subject
 - You can view the attendance after clicking `View Attendance` button. It will show record in tabular format.
-
 
