@@ -24,4 +24,5 @@
 - check sheets in each window is a auto-generated csv file of respective data in respective path(you can see the csv file right away).
 
 ### Screenshots-----
-Screenshots
+
+https://github.com/JayanthSD2003/AMS-Attendance_Management_System/tree/a817a7983151a3b7642ac04c06b51d7ecba33da6/Screenshots
