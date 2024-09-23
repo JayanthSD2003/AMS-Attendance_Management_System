@@ -17,9 +17,9 @@ def subjectchoose(text_to_speech):
             return
 
         folders = [
-            r"F:\\Project\\Attendance-Management-system-using-face-recognition-master\\Attendance\\AI-ML",
-            r"F:\\Project\\Attendance-Management-system-using-face-recognition-master\\Attendance\\da",
-            r"F:\\Project\\Attendance-Management-system-using-face-recognition-master\\Attendance\\math"
+            r"F:\\Projects\\AMS\\Attendance\\AI-ML",  #AI-ML
+            r"F:\\Projects\\AMS\\Attendance\\DA-DS",  #DA-DS
+            r"F:\\Projects\\AMS\\Attendance\\Mathematics"  #Mathematics
         ]
 
         filenames = []
@@ -87,9 +87,9 @@ def subjectchoose(text_to_speech):
             return
 
         folders = [
-            r"F:\\Project\\Attendance-Management-system-using-face-recognition-master\\Attendance\\AI-ML",
-            r"F:\\Project\\Attendance-Management-system-using-face-recognition-master\\Attendance\\da",
-            r"F:\\Project\\Attendance-Management-system-using-face-recognition-master\\Attendance\\math"
+            r"F:\\Projects\\AMS\\Attendance\\AI-ML",  #AI-ML
+            r"F:\\Projects\\AMS\\Attendance\\DA-DS",  #DA-DS
+            r"F:\\Projects\\AMS\\Attendance\\Mathematics"  #Mathematics
         ]
         
         for folder in folders:
@@ -103,30 +103,30 @@ def subjectchoose(text_to_speech):
             text_to_speech(t)
 
     subject = tk.Tk()
-    subject.title("Subject")
+    subject.title("Viewing Attendance...")
     subject.geometry("580x320")
     subject.resizable(0, 0)
-    subject.configure(background="black")
+    subject.configure(background="#274c43")
 
-    titl = tk.Label(subject, bg="black", relief=RIDGE, bd=10, font=("arial", 30))
+    titl = tk.Label(subject, bg="#274c43", relief=RIDGE, bd=10, font=("Ink Free", 30))
     titl.pack(fill=X)
     titl = tk.Label(
         subject,
-        text="Enter the Subject Name",
-        bg="black",
-        fg="green",
-        font=("arial", 25),
+        text="Attendance report",
+        bg="#274c43",
+        fg="yellow",
+        font=("Ink Free", 25),
     )
     titl.place(x=160, y=12)
 
     Notifica = tk.Label(
         subject,
         text="Attendance Report Generated Successfully",
-        bg="yellow",
+        bg="#274c43",
         fg="black",
         width=33,
         height=2,
-        font=("times", 15, "bold"),
+        font=("Ink Free", 15, "bold"),
     )
 
     sub = tk.Label(
@@ -134,11 +134,11 @@ def subjectchoose(text_to_speech):
         text="Enter Subject",
         width=10,
         height=2,
-        bg="black",
-        fg="yellow",
+        bg="#274c43",
+        fg="white",
         bd=5,
         relief=RIDGE,
-        font=("times new roman", 15),
+        font=("Ink Free", 15),
     )
     sub.place(x=50, y=100)
 
@@ -146,10 +146,10 @@ def subjectchoose(text_to_speech):
         subject,
         width=15,
         bd=5,
-        bg="black",
-        fg="yellow",
+        bg="#274c43",
+        fg="white",
         relief=RIDGE,
-        font=("times", 30, "bold"),
+        font=("Ink Free", 30, "bold"),
     )
     tx.place(x=190, y=100)
 
@@ -158,14 +158,14 @@ def subjectchoose(text_to_speech):
         text="Show Attendance",
         command=calculate_attendance,
         bd=7,
-        font=("times new roman", 15),
-        bg="black",
-        fg="yellow",
+        font=("Ink Free", 15),
+        bg="#274c43",
+        fg="white",
         height=2,
-        width=12,
+        width=14,
         relief=RIDGE,
     )
-    calculate_att.place(x=195, y=170)
+    calculate_att.place(x=190, y=170)
 
     # Add a button to check attendance sheets
     check_sheets = tk.Button(
@@ -173,13 +173,13 @@ def subjectchoose(text_to_speech):
         text="Check Sheets",
         command=open_sheets,
         bd=7,
-        font=("times new roman", 15),
-        bg="black",
-        fg="yellow",
+        font=("Ink Free", 15),
+        bg="#274c43",
+        fg="white",
         height=2,
-        width=12,
+        width=10,
         relief=RIDGE,
     )
-    check_sheets.place(x=360, y=170)
+    check_sheets.place(x=370, y=170)
 
     subject.mainloop()
