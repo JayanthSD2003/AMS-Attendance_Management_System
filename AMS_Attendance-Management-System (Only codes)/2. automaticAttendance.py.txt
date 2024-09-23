@@ -1,143 +1,147 @@
 import tkinter as tk
 from tkinter import *
-import os, cv2
-import shutil
-import csv
-import numpy as np
-from PIL import ImageTk, Image
+import os
+import cv2
 import pandas as pd
 import datetime
 import time
-import tkinter.ttk as tkk
-import tkinter.font as font
 
-haarcasecade_path = "F:\\Project\\Attendance-Management-system-using-face-recognition-master\\haarcascade_frontalface_default.xml"
-trainimagelabel_path = "F:\\Project\\Attendance-Management-system-using-face-recognition-master\\TrainingImageLabel\\Trainner.yml"
-trainimage_path = "TrainingImage"
-studentdetail_path = "F:\\Project\\Attendance-Management-system-using-face-recognition-master\\StudentDetails\\studentdetails.csv"
-attendance_path = "F:\\Project\\Attendance-Management-system-using-face-recognition-master\\Attendance"
+# Paths for required files
+haarcasecade_path = "F:\\Projects\\AMS\\haarcascade_frontalface_default.xml"  # haarcascade_frontalface_default.xml
+trainimagelabel_path = "F:\\Projects\\AMS\\TrainingImageLabel\\Trainner.yml"  #Trainner.yml 
+studentdetail_path = "F:\\Projects\\AMS\\StudentDetails\\studentdetails.csv"  # studentdetails.csv
+attendance_path = "F:\\Projects\\AMS\\Attendance"  # Attendance
 
-# for choosing subject and filling attendance
+# Function for choosing subject and filling attendance
 def subjectChoose(text_to_speech):
     def FillAttendance():
         sub = tx.get()
         now = time.time()
-        future = now + 20
+        future = now + 20  # Time limit for filling attendance (20 seconds)
+        
         if sub == "":
             t = "Please enter the subject name!!!"
             text_to_speech(t)
-        else:
-            try:
-                recognizer = cv2.face.LBPHFaceRecognizer_create()
-                try:
-                    recognizer.read(trainimagelabel_path)
-                except:
-                    e = "Model not found, please train model"
-                    Notifica.configure(
-                        text=e,
-                        bg="black",
-                        fg="yellow",
-                        width=33,
-                        font=("times", 15, "bold"),
-                    )
-                    Notifica.place(x=20, y=250)
-                    text_to_speech(e)
-                faceCascade = cv2.CascadeClassifier(haarcasecade_path)
-                df = pd.read_csv(studentdetail_path)
-                cam = cv2.VideoCapture(0)
-                font = cv2.FONT_HERSHEY_SIMPLEX
-                col_names = ["Enrollment", "Name", "Date", "Time"]
-                attendance = pd.DataFrame(columns=col_names)
-                while True:
-                    ret, im = cam.read()
-                    gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
-                    faces = faceCascade.detectMultiScale(gray, 1.2, 5)
-                    for (x, y, w, h) in faces:
-                        global Id
-                        Id, conf = recognizer.predict(gray[y: y + h, x: x + w])
-                        if conf < 70:
-                            global Subject
-                            global aa
-                            global date
-                            global timeStamp
-                            Subject = tx.get()
-                            ts = time.time()
-                            date = datetime.datetime.fromtimestamp(ts).strftime("%Y-%m-%d")
-                            timeStamp = datetime.datetime.fromtimestamp(ts).strftime("%H:%M:%S")
-                            aa = df.loc[df["Enrollment"] == Id]["Name"].values[0]
-                            tt = f"{Id}-{aa}"
-                            attendance.loc[len(attendance)] = [Id, aa, date, timeStamp]
-                            cv2.rectangle(im, (x, y), (x + w, y + h), (0, 260, 0), 4)
-                            cv2.putText(im, str(tt), (x + h, y), font, 1, (255, 255, 0), 4)
-                        else:
-                            Id = "Unknown"
-                            tt = str(Id)
-                            cv2.rectangle(im, (x, y), (x + w, y + h), (0, 25, 255), 7)
-                            cv2.putText(im, str(tt), (x + h, y), font, 1, (0, 25, 255), 4)
-                    if time.time() > future:
-                        break
+            return
+        
+        try:
+            recognizer = cv2.face.LBPHFaceRecognizer_create()
+            recognizer.read(trainimagelabel_path)  # Load the trained model
 
-                    attendance = attendance.drop_duplicates(["Enrollment"], keep="first")
-                    cv2.imshow("Filling Attendance...", im)
-                    key = cv2.waitKey(30) & 0xFF
-                    if key == 27:
-                        break
+            faceCascade = cv2.CascadeClassifier(haarcasecade_path)  # Load Haar Cascade
+            if faceCascade.empty():
+                raise Exception("Haar Cascade not loaded properly.")
 
-                ts = time.time()
-                date = datetime.datetime.fromtimestamp(ts).strftime("%Y-%m-%d")
-                timeStamp = datetime.datetime.fromtimestamp(ts).strftime("%H:%M:%S")
-                path = os.path.join(attendance_path, Subject)
-                if not os.path.exists(path):
-                    os.makedirs(path)
-                fileName = f"{path}/{Subject}_{date}.csv"
-                attendance.to_csv(fileName, index=False)
+            df = pd.read_csv(studentdetail_path, header=None, names=["Enrollment", "Name"])  # Load student details
+            print("Student details DataFrame after loading:")
+            print(df)  # Print the entire DataFrame
+            print("Columns in DataFrame:", df.columns.tolist())  # Print the column names
+            
+            # Check if "Enrollment" exists in DataFrame
+            if "Enrollment" not in df.columns:
+                raise Exception("Column 'Enrollment' not found in the student details DataFrame.")
 
-                m = f"Attendance Filled Successfully for {Subject}"
-                Notifica.configure(
-                    text=m,
-                    bg="black",
-                    fg="yellow",
-                    width=33,
-                    relief=RIDGE,
-                    bd=5,
-                    font=("times", 15, "bold"),
-                )
-                text_to_speech(m)
-                Notifica.place(x=20, y=250)
+            cam = cv2.VideoCapture(0)  # Initialize the webcam
+            
+            if not cam.isOpened():
+                raise Exception("Camera not opened. Please check your camera settings.")
 
-                cam.release()
-                cv2.destroyAllWindows()
-            except Exception as e:
-                print(e)
-                f = "No Face found for attendance"
-                text_to_speech(f)
-                cv2.destroyAllWindows()
+            cam.set(cv2.CAP_PROP_FRAME_WIDTH, 640)  # Set camera width
+            cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)  # Set camera height
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            col_names = ["Enrollment", "Name", "Date", "Time"]
+            attendance = pd.DataFrame(columns=col_names)  # Initialize attendance DataFrame
+            
+            print("Camera initialized, starting face detection...")
+            
+            while True:
+                ret, im = cam.read()  # Capture frame
+                if not ret:
+                    print("Failed to capture frame")
+                    break
+                
+                gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)  # Convert to grayscale
+                faces = faceCascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)  # Detect faces
+                
+                print(f"Detected faces: {len(faces)}")
+                
+                for (x, y, w, h) in faces:
+                    global Id
+                    Id, conf = recognizer.predict(gray[y: y + h, x: x + w])  # Predict ID
+                    print(f"Predicted ID: {Id}, Confidence: {conf}")
+                    
+                    if conf < 70:
+                        global Subject
+                        global aa
+                        global date
+                        global timeStamp
+                        Subject = tx.get()
+                        ts = time.time()
+                        date = datetime.datetime.fromtimestamp(ts).strftime("%Y-%m-%d")
+                        timeStamp = datetime.datetime.fromtimestamp(ts).strftime("%H:%M:%S")
+                        aa = df.loc[df["Enrollment"] == Id]["Name"].values[0]  # Get name from ID
+                        attendance.loc[len(attendance)] = [Id, aa, date, timeStamp]  # Add to attendance
+                        cv2.rectangle(im, (x, y), (x + w, y + h), (0, 260, 0), 4)
+                        cv2.putText(im, f"{Id}-{aa}", (x, y - 10), font, 1, (255, 255, 0), 4)
+                    else:
+                        Id = "Unknown"
+                        cv2.rectangle(im, (x, y), (x + w, y + h), (0, 25, 255), 7)
+                        cv2.putText(im, str(Id), (x, y - 10), font, 1, (0, 25, 255), 4)
+                
+                if time.time() > future:
+                    break
+                
+                attendance = attendance.drop_duplicates(["Enrollment"], keep="first")  # Remove duplicates
+                cv2.imshow("Filling Attendance...", im)  # Show the current frame
+                if cv2.waitKey(30) & 0xFF == 27:  # Exit on ESC key
+                    break
+
+            # Save attendance to CSV
+            path = os.path.join(attendance_path, Subject)
+            if not os.path.exists(path):
+                os.makedirs(path)
+            fileName = f"{path}/{Subject}_{date}.csv"
+            attendance.to_csv(fileName, index=False)
+            print(f"Attendance saved to {fileName}")
+
+            m = f"Attendance Filled Successfully for {Subject}"
+            text_to_speech(m)
+            Notifica.configure(text=m, bg="#274c43", fg="white", width=33, relief=RIDGE, bd=5, font=("Ink Free", 15, "bold"))
+            Notifica.place(x=20, y=250)
+
+            cam.release()
+            cv2.destroyAllWindows()
+        except Exception as e:
+            print(f"Error: {e}")  # Print any exceptions for debugging
+            f = "An error occurred. Please check the console."
+            text_to_speech(f)
+            cv2.destroyAllWindows()
 
     subject = tk.Tk()
-    subject.title("Subject")
+    subject.title("Filling Attendance...")
     subject.geometry("580x320")
     subject.resizable(0, 0)
-    subject.configure(background="black")
+    subject.configure(background="#274c43")
 
-    titl = tk.Label(subject, bg="black", relief=RIDGE, bd=10, font=("arial", 30))
+    titl = tk.Label(subject, bg="#274c43", relief=RIDGE, bd=10, font=("Ink Free", 30))
     titl.pack(fill=X)
     titl = tk.Label(
         subject,
-        text="Enter the Subject Name",
-        bg="black",
-        fg="green",
-        font=("arial", 25),
+        text="Subject Attendance Filling",
+        bg="#274c43",
+        fg="yellow",
+        font=("Ink Free", 25, "bold"),
     )
     titl.place(x=160, y=12)
 
     Notifica = tk.Label(
         subject,
         text="Attendance filled Successfully",
-        bg="yellow",
-        fg="black",
+        bg="#274c43",
+        fg="white",
         width=33,
         height=2,
-        font=("times", 15, "bold"),
+        font=("Ink Free", 15),
     )
 
     def Attf():
@@ -153,9 +157,9 @@ def subjectChoose(text_to_speech):
         text="Check Sheets",
         command=Attf,
         bd=7,
-        font=("times new roman", 15),
-        bg="black",
-        fg="yellow",
+        font=("Ink Free", 15),
+        bg="#274c43",
+        fg="white",
         height=2,
         width=10,
         relief=RIDGE,
@@ -167,11 +171,11 @@ def subjectChoose(text_to_speech):
         text="Enter Subject",
         width=10,
         height=2,
-        bg="black",
-        fg="yellow",
+        bg="#274c43",
+        fg="white",
         bd=5,
         relief=RIDGE,
-        font=("times new roman", 15),
+        font=("Ink Free", 15),
     )
     sub.place(x=50, y=100)
 
@@ -179,10 +183,10 @@ def subjectChoose(text_to_speech):
         subject,
         width=15,
         bd=5,
-        bg="black",
-        fg="yellow",
+        bg="#274c43",
+        fg="white",
         relief=RIDGE,
-        font=("times", 30, "bold"),
+        font=("Ink Free", 30, "bold"),
     )
     tx.place(x=190, y=100)
 
@@ -191,9 +195,9 @@ def subjectChoose(text_to_speech):
         text="Fill Attendance",
         command=FillAttendance,
         bd=7,
-        font=("times new roman", 15),
-        bg="black",
-        fg="yellow",
+        font=("Ink Free", 15),
+        bg="#274c43",
+        fg="white",
         height=2,
         width=12,
         relief=RIDGE,
