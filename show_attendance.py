@@ -17,9 +17,9 @@ def subjectchoose(text_to_speech):
             return
 
         folders = [
-            r"F:\\Projects\\AMS\\Attendance\\AI-ML",  #AI-ML
-            r"F:\\Projects\\AMS\\Attendance\\DA-DS",  #DA-DS
-            r"F:\\Projects\\AMS\\Attendance\\Mathematics"  #Mathematics
+            r"F:\\Projects\\AMS\\Attendance\\AI-ML",  # AI-ML
+            r"F:\\Projects\\AMS\\Attendance\\DA-DS",  # DA-DS
+            r"F:\\Projects\\AMS\\Attendance\\Mathematics"  # Mathematics
         ]
 
         filenames = []
@@ -42,7 +42,7 @@ def subjectchoose(text_to_speech):
         newdf['Current_Date'] = current_date
         newdf['Timestamp'] = timestamp
 
-        # Group the data by Enrollment to get total unique attendance dates (i.e., total present classes)
+        # Group the data by Enrollment to get total unique attendance dates
         grouped = newdf.groupby("Enrollment").agg({
             'Enrollment': 'first',
             'Name': 'first',
@@ -51,17 +51,18 @@ def subjectchoose(text_to_speech):
             'Timestamp': 'first'  # Show the timestamp
         })
 
-        # Calculate attendance percentage based on the number of unique dates
+        # Calculate attendance percentage
         grouped["Percentage"] = (grouped["Date"] / len(filenames)) * 100
         result_df = grouped.rename(columns={"Date": "Total_Present_Classes"})
 
         # Create a new window to display the result
         result_window = tk.Tk()
+        result_window.title("Attendance Report")  # Set the title to "Attendance Report"
         result_window.geometry("1100x500")
 
         pt = ttk.Treeview(result_window)
 
-        # Define columns for the Treeview including the current date and timestamp
+        # Define columns for the Treeview
         pt['columns'] = ('Enrollment', 'Name', 'Total Present Classes', 'Attendance Percentage', 'Current Date', 'Timestamp')
         pt.heading("#0", text="", anchor=tk.W)
         pt.column("#0", width=0)
@@ -87,9 +88,9 @@ def subjectchoose(text_to_speech):
             return
 
         folders = [
-            r"F:\\Projects\\AMS\\Attendance\\AI-ML",  #AI-ML
-            r"F:\\Projects\\AMS\\Attendance\\DA-DS",  #DA-DS
-            r"F:\\Projects\\AMS\\Attendance\\Mathematics"  #Mathematics
+            r"F:\\Projects\\AMS\\Attendance\\AI-ML",  # AI-ML
+            r"F:\\Projects\\AMS\\Attendance\\DA-DS",  # DA-DS
+            r"F:\\Projects\\AMS\\Attendance\\Mathematics"  # Mathematics
         ]
         
         for folder in folders:
