@@ -21,4 +21,5 @@
 - After training model click on `Automatic Attendance` ,you have to enter the subject name and then it can fill attendace by your face using our trained model.
 - it will create `.csv` file for every subject you enter and seperate every `.csv` file accoriding the subject
 - You can view the attendance after clicking `View Attendance` button. It will show record in tabular format.
-
+- check sheets in each window is a auto-generated csv file of respective data in respective path(you can see the csv file right away.
+  
