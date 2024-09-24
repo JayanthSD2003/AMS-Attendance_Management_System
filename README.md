@@ -35,16 +35,16 @@
 
 ### Screenshots-----
 
-- Home - AMS
+- Home - AMS \n
   ![Home](https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/e6c5be12d1cfb04d4c8e038f534b0eb20c16261a/Screenshots/1.%20Home-AMS.png)
 
-- Student Enrollment - AMS
+- Student Enrollment - AMS \n
   ![Student Enrollment](https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/aed899bb4cf1d02b0d49a4d9016462badb284c3d/Screenshots/2.%20Student%20Enrollment-AMS.png)
    
-- Face Capture - AMS
+- Face Capture - AMS \n
   ![Face Capture](https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/aed899bb4cf1d02b0d49a4d9016462badb284c3d/Screenshots/3.%20Face%20Capture-AMS.png)
  
-- Saving Face Data - AMS
+- Saving Face Data - AMS \n
   ![Saving Face Data](https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/aed899bb4cf1d02b0d49a4d9016462badb284c3d/Screenshots/4.%20Saving%20Face-AMS.png) 
 
 - Face Data Training - AMS
