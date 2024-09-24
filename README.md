@@ -3,7 +3,7 @@
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)                 
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-360/) 
-
+[![opencv-contrib-python 4.2.0.34](https://img.shields.io/badge/opencv-contrib-python-4.2.0.34)](https://pypi.org/project/opencv-contrib-python/4.2.0.34/)
 
 ### What steps you have to follow??
 - Download or clone my Repository to your device
