@@ -36,7 +36,7 @@
 ### Screenshots-----
 
 - Home - AMS
-  ![Home](Screenshots/1. Home-AMS.png)
+  ![Home](https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/e6c5be12d1cfb04d4c8e038f534b0eb20c16261a/Screenshots/1.%20Home-AMS.png)
 
 - Student Enrollment - AMS
   
