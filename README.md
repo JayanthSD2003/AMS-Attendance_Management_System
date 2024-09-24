@@ -3,7 +3,13 @@
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)                 
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-360/) 
-[![opencv-contrib-python 4.2.0.34](https://img.shields.io/badge/opencv-contrib-python-4.2.0.34)](https://pypi.org/project/opencv-contrib-python/4.2.0.34/)
+[![NumPy](https://img.shields.io/badge/numpy-1.16.1-blue.svg)](https://pypi.org/project/numpy/1.16.1/)
+[![OpenCV-contrib-python](https://img.shields.io/badge/opencv--contrib--python-4.2.0.34-blue.svg)](https://pypi.org/project/opencv-contrib-python/4.2.0.34/)
+[![OpenCV-python](https://img.shields.io/badge/opencv--python-4.2.0.34-blue.svg)](https://pypi.org/project/opencv-python/4.2.0.34/)
+[![openpyxl](https://img.shields.io/badge/openpyxl-3.0.3-blue.svg)](https://pypi.org/project/openpyxl/3.0.3/)
+[![pandas](https://img.shields.io/badge/pandas-1.0.3-blue.svg)](https://pypi.org/project/pandas/1.0.3/)
+[![Pillow](https://img.shields.io/badge/Pillow-7.1.1-blue.svg)](https://pypi.org/project/Pillow/7.1.1/)
+[![pyttsx3](https://img.shields.io/badge/pyttsx3-2.71-blue.svg)](https://pypi.org/project/pyttsx3/2.71/)
 
 ### What steps you have to follow??
 - Download or clone my Repository to your device
