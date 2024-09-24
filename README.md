@@ -12,6 +12,9 @@
 [![pyttsx3](https://img.shields.io/badge/pyttsx3-2.71-blue.svg)](https://pypi.org/project/pyttsx3/2.71/)
 ![Haar Cascade](https://img.shields.io/badge/Haar_Cascade-OpenCV-blue.svg)
 [![Haar Cascade](https://img.shields.io/badge/Haar_Cascade-OpenCV-blue.svg)](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html)
+![Powered by ChatGPT](https://img.shields.io/badge/Powered_by-ChatGPT-00A884.svg)
+[![Powered by ChatGPT](https://img.shields.io/badge/Powered_by-ChatGPT-00A884.svg)](https://openai.com/chatgpt)
+
 
 ### What steps you have to follow??
 - Download or clone my Repository to your device
