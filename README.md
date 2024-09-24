@@ -5,7 +5,7 @@
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-360/) 
 
 [![VS Code](https://img.shields.io/badge/Made%20with-VS%20Code-0078d7.svg?logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)
-[![Anaconda](https://img.shields.io/badge/Anaconda-Navigator-green.svg)](https://docs.anaconda.com/anaconda/navigator/)
+[![Made with Anaconda Navigator](https://img.shields.io/badge/Made%20with-Anaconda%20Navigator-green.svg)](https://docs.anaconda.com/anaconda/navigator/)
 
 [![NumPy](https://img.shields.io/badge/numpy-1.16.1-blue.svg)](https://pypi.org/project/numpy/1.16.1/)
 [![OpenCV-contrib-python](https://img.shields.io/badge/opencv--contrib--python-4.2.0.34-blue.svg)](https://pypi.org/project/opencv-contrib-python/4.2.0.34/)
