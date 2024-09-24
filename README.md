@@ -4,6 +4,9 @@
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)                 
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-360/) 
 
+[![VS Code](https://img.shields.io/badge/Made%20with-VS%20Code-0078d7.svg?logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)
+[![Anaconda](https://img.shields.io/badge/Anaconda-Navigator-green.svg)](https://docs.anaconda.com/anaconda/navigator/)
+
 [![NumPy](https://img.shields.io/badge/numpy-1.16.1-blue.svg)](https://pypi.org/project/numpy/1.16.1/)
 [![OpenCV-contrib-python](https://img.shields.io/badge/opencv--contrib--python-4.2.0.34-blue.svg)](https://pypi.org/project/opencv-contrib-python/4.2.0.34/)
 [![OpenCV-python](https://img.shields.io/badge/opencv--python-4.2.0.34-blue.svg)](https://pypi.org/project/opencv-python/4.2.0.34/)
@@ -11,8 +14,6 @@
 [![pandas](https://img.shields.io/badge/pandas-1.0.3-blue.svg)](https://pypi.org/project/pandas/1.0.3/)
 [![Pillow](https://img.shields.io/badge/Pillow-7.1.1-blue.svg)](https://pypi.org/project/Pillow/7.1.1/)
 [![pyttsx3](https://img.shields.io/badge/pyttsx3-2.71-blue.svg)](https://pypi.org/project/pyttsx3/2.71/)
-[![VS Code](https://img.shields.io/badge/Made%20with-VS%20Code-0078d7.svg?logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)
-[![Anaconda](https://img.shields.io/badge/Anaconda-Navigator-green.svg)](https://docs.anaconda.com/anaconda/navigator/)
 [![Haar Cascade](https://img.shields.io/badge/Haar_Cascade-OpenCV-blue.svg)](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html)
 [![Powered by ChatGPT](https://img.shields.io/badge/Powered_by-ChatGPT-00A884.svg)](https://openai.com/chatgpt)
 
