@@ -35,4 +35,41 @@
 
 ### Screenshots-----
 
+- Home - AMS
+  https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/1b13e5f8d96819bf3f9c28fb2b37184bf2fb8215/Screenshots/1.Home-AMS.png
+
+- Student Enrollment - AMS
+  https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/1b13e5f8d96819bf3f9c28fb2b37184bf2fb8215/Screenshots/2.Student%20Enrollment-AMS.png
+
+- Face capture - AMS
+  https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/1b13e5f8d96819bf3f9c28fb2b37184bf2fb8215/Screenshots/3.Face%20Capture-AMS.png
+
+- Saving Face - AMS
+  https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/1b13e5f8d96819bf3f9c28fb2b37184bf2fb8215/Screenshots/4.Saving%20Face-AMS.png
+
+- Face Data Training - AMS
+  https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/1b13e5f8d96819bf3f9c28fb2b37184bf2fb8215/Screenshots/5.Face%20data%20Training.png
+
+- Subject Attendance Filling - AMS
+  https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/1b13e5f8d96819bf3f9c28fb2b37184bf2fb8215/Screenshots/6.Subject%20Attendance%20Filling-AMS.png
+
+- Subject Attendance Filling_sample - AMS
+  https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/1b13e5f8d96819bf3f9c28fb2b37184bf2fb8215/Screenshots/7.Subject%20Attendance%20Filling_sample-AMS.png
+
+- Subject Attendance Filling_face-recognize - AMS
+  https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/1b13e5f8d96819bf3f9c28fb2b37184bf2fb8215/Screenshots/8.Subject%20Attendance%20Filling_face-recognize-AMS.png
+
+- Attendance Filled Successfully - AMS
+  https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/1b13e5f8d96819bf3f9c28fb2b37184bf2fb8215/Screenshots/9.Attendance%20Filled%20Successfully-AMS.png
+
+- Attendance Report - AMS
+  https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/1b13e5f8d96819bf3f9c28fb2b37184bf2fb8215/Screenshots/10.Attendance%20report-AMS.png
+
+- Attendance Report_sample - AMS
+  https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/1b13e5f8d96819bf3f9c28fb2b37184bf2fb8215/Screenshots/11.Attendance%20report_sample-AMS.png
+
+- Attendance Report - AMS
+  https://github.com/JayanthSD2003/AMS-Attendance_Management_System/blob/1b13e5f8d96819bf3f9c28fb2b37184bf2fb8215/Screenshots/12.Attendance%20Report-AMS.png
+
+- Screenshots folder link:
 https://github.com/JayanthSD2003/AMS-Attendance_Management_System/tree/a817a7983151a3b7642ac04c06b51d7ecba33da6/Screenshots
