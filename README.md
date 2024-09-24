@@ -12,6 +12,7 @@
 [![Pillow](https://img.shields.io/badge/Pillow-7.1.1-blue.svg)](https://pypi.org/project/Pillow/7.1.1/)
 [![pyttsx3](https://img.shields.io/badge/pyttsx3-2.71-blue.svg)](https://pypi.org/project/pyttsx3/2.71/)
 [![VS Code](https://img.shields.io/badge/Made%20with-VS%20Code-0078d7.svg?logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)
+[![Anaconda](https://img.shields.io/badge/Anaconda-Navigator-green.svg)](https://docs.anaconda.com/anaconda/navigator/)
 [![Haar Cascade](https://img.shields.io/badge/Haar_Cascade-OpenCV-blue.svg)](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html)
 [![Powered by ChatGPT](https://img.shields.io/badge/Powered_by-ChatGPT-00A884.svg)](https://openai.com/chatgpt)
 
