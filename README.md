@@ -36,40 +36,40 @@
 ### Screenshots-----
 
 - Home - AMS
-  Screenshots/1. Home-AMS.png
+  ![Home](Screenshots/1. Home-AMS.png)
 
 - Student Enrollment - AMS
-  Screenshots/2. Student Enrollment-AMS.png
-
+  
+   
 - Face Capture - AMS
-  Screenshots/3. Face Capture-AMS.png
-
+  
+ 
 - Saving Face Data - AMS
-  Screenshots/4. Saving Face-AMS.png
+ 
 
 - Face Data Training - AMS
-  Screenshots/5. Face data Training.png
+  
 
 - Subject Attendance Filling - AMS
-  Screenshots/6. Subject Attendance Filling-AMS.png
-
+  
+  
 - Subjecct Attendance Filling_sample - AMS
-  Screenshots/7. Subject Attendance Filling_sample-AMS.png
+ 
 
 - Subject Attendance Filling_face-recognize - AMS
-  Screenshots/8. Subject Attendance Filling_face-recognize-AMS.png
-
+  
+  
 - Subject Attendance Filling_success - AMS
-  Screenshots/9. Attendance Filled Successfully-AMS.png
+  
 
 - Attendance Report Portal  - AMS
-  Screenshots/10. Attendance Report Portal-AMS.png
+  
 
 - Attendance Report Portal_sample - AMS
-  Screenshots/11. Attendance report_sample-AMS.png
-
+  
+  
 - Attendance Report - AMS
-  Screenshots/12. Attendance Report-AMS.png
+  
   
 
 - Screenshots folder link:
